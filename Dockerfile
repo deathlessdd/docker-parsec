@@ -12,7 +12,7 @@ RUN install_clean libcairo2 libfreetype6 libgdk-pixbuf2.0-0 libgl1-mesa-glx libg
 
 # Parsec Client
 RUN install_clean wget \
-&&  wget --no-check-certificate "https://s3.amazonaws.com/parsec-build/package/parsec-linux.deb" -O parsec-linux.deb \ 
+&&  wget --no-check-certificate "https://builds.parsec.app/package/parsec-linux.deb" -O parsec-linux.deb \ 
 &&  dpkg --ignore-depends libsndio6.1 -i parsec-linux.deb # --ignore-depends fixes libsndio \
 &&  rm parsec-linux.deb \
 &&  apt-get remove -y wget
